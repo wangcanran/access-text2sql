@@ -1,0 +1,112 @@
+{
+  "python_files_parsed": 649,
+  "checks": [
+    {
+      "check": "main_and_underlying_source_locks",
+      "passed": true
+    },
+    {
+      "command": [
+        "tools/run_frontend.py",
+        "--method",
+        "access",
+        "--fixture",
+        "examples/synthetic_sales",
+        "--out",
+        "runs/check_access",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tools/run_frontend.py",
+        "--method",
+        "serial",
+        "--fixture",
+        "examples/synthetic_sales",
+        "--out",
+        "runs/check_serial",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tools/run_frontend.py",
+        "--method",
+        "policy",
+        "--fixture",
+        "examples/synthetic_sales",
+        "--out",
+        "runs/check_policy",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tools/run_frontend.py",
+        "--method",
+        "no_clarification",
+        "--fixture",
+        "examples/synthetic_sales",
+        "--out",
+        "runs/check_no_clarification",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tools/run_frontend.py",
+        "--method",
+        "no_pruning",
+        "--fixture",
+        "examples/synthetic_sales",
+        "--out",
+        "runs/check_no_pruning",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tools/run_frontend.py",
+        "--method",
+        "clarify_then_prune",
+        "--fixture",
+        "examples/synthetic_sales",
+        "--out",
+        "runs/check_clarify_then_prune",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tools/reproduce_tables.py",
+        "--out",
+        "runs/tables"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "scripts/predict_rbac_cloud_only.py",
+        "--help"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "data_generation/scripts/generate_flat_cross_dataset.py",
+        "--help"
+      ],
+      "returncode": 0
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "model_API_calls": 0
+}

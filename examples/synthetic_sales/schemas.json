@@ -1,0 +1,52 @@
+{
+  "synthetic_sales": {
+    "tables": {
+      "orders": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "order_id",
+            "type": "INTEGER",
+            "pk": 1,
+            "notnull": 0,
+            "dflt_value": null
+          },
+          {
+            "cid": 1,
+            "name": "product_name",
+            "type": "TEXT",
+            "pk": 0,
+            "notnull": 0,
+            "dflt_value": null
+          },
+          {
+            "cid": 2,
+            "name": "customer_email",
+            "type": "TEXT",
+            "pk": 0,
+            "notnull": 0,
+            "dflt_value": null
+          },
+          {
+            "cid": 3,
+            "name": "status",
+            "type": "TEXT",
+            "pk": 0,
+            "notnull": 0,
+            "dflt_value": null
+          },
+          {
+            "cid": 4,
+            "name": "order_date",
+            "type": "TEXT",
+            "pk": 0,
+            "notnull": 0,
+            "dflt_value": null
+          }
+        ],
+        "foreign_keys": []
+      }
+    },
+    "descriptions": {}
+  }
+}

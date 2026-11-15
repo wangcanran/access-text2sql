@@ -1,0 +1,759 @@
+{
+  "seed": 20261028,
+  "eligible_questions": 286,
+  "selected_questions": 80,
+  "selected_sessions": 480,
+  "pilot_questions": 12,
+  "strata": {
+    "formula_1:simple": 5,
+    "card_games:moderate": 4,
+    "student_club:simple": 5,
+    "debit_card_specializing:moderate": 1,
+    "superhero:simple": 6,
+    "card_games:simple": 7,
+    "toxicology:moderate": 2,
+    "student_club:moderate": 4,
+    "codebase_community:simple": 8,
+    "european_football_2:simple": 4,
+    "california_schools:simple": 2,
+    "codebase_community:moderate": 1,
+    "thrombosis_prediction:challenging": 2,
+    "thrombosis_prediction:simple": 3,
+    "european_football_2:moderate": 3,
+    "debit_card_specializing:simple": 3,
+    "card_games:challenging": 1,
+    "thrombosis_prediction:moderate": 4,
+    "toxicology:simple": 3,
+    "debit_card_specializing:challenging": 1,
+    "superhero:moderate": 1,
+    "toxicology:challenging": 2,
+    "european_football_2:challenging": 1,
+    "superhero:challenging": 1,
+    "formula_1:moderate": 3,
+    "financial:moderate": 1,
+    "california_schools:moderate": 1,
+    "financial:simple": 1
+  },
+  "questions": [
+    {
+      "question_id": 893,
+      "db_id": "formula_1",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 9,
+      "broad_role": "DataOperator_1",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 498,
+      "db_id": "card_games",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "MarketplaceAnalyst",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1411,
+      "db_id": "student_club",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "ClubAdvisor",
+      "restricted_role": "EventCoordinator",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1475,
+      "db_id": "debit_card_specializing",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "FinancialAnalyst",
+      "restricted_role": "GasStationNetworkManager",
+      "restricted_missing_count": 5
+    },
+    {
+      "question_id": 778,
+      "db_id": "superhero",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 6,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 481,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "MarketplaceAnalyst",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 236,
+      "db_id": "toxicology",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "ConnectivityAnalyst",
+      "restricted_role": "MolecularViewer",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 436,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 1,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "LocalizationCoordinator",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 1401,
+      "db_id": "student_club",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 7,
+      "broad_role": "ClubAdvisor",
+      "restricted_role": "MembershipManager",
+      "restricted_missing_count": 7
+    },
+    {
+      "question_id": 532,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 1,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "TagCurator",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 353,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "MarketplaceAnalyst",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 244,
+      "db_id": "toxicology",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "MolecularDataEntry",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 546,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "TagCurator",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 643,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 3,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "TagCurator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 446,
+      "db_id": "card_games",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1012,
+      "db_id": "formula_1",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 6,
+      "broad_role": "RaceAnalyst",
+      "restricted_role": "PublicRelations",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 649,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "TagCurator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1074,
+      "db_id": "european_football_2",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 70,
+      "db_id": "california_schools",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_2",
+      "restricted_role": "AcademicPerformanceAnalyst",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 813,
+      "db_id": "superhero",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 6,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "IdentityManager",
+      "restricted_missing_count": 5
+    },
+    {
+      "question_id": 633,
+      "db_id": "codebase_community",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "TagCurator",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1194,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 8,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "PatientCoordinator",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 467,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "MarketplaceAnalyst",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1278,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "DataOperator_3",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1095,
+      "db_id": "european_football_2",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1055,
+      "db_id": "european_football_2",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "Scout",
+      "restricted_role": "BettingAnalyst",
+      "restricted_missing_count": 5
+    },
+    {
+      "question_id": 1494,
+      "db_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 1,
+      "broad_role": "FinancialAnalyst",
+      "restricted_role": "MarketingSpecialist",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 529,
+      "db_id": "card_games",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 1,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 1407,
+      "db_id": "student_club",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 2,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "EventCoordinator",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 476,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 528,
+      "db_id": "card_games",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 7,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "LocalizationCoordinator",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1512,
+      "db_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 1,
+      "broad_role": "FinancialAnalyst",
+      "restricted_role": "MarketingSpecialist",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 721,
+      "db_id": "superhero",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "PowerCoordinator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1277,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 681,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "DataOperator_3",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1203,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "PatientCoordinator",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 313,
+      "db_id": "toxicology",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 2,
+      "broad_role": "MolecularDataEntry",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1086,
+      "db_id": "european_football_2",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "Scout",
+      "restricted_role": "BettingAnalyst",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1481,
+      "db_id": "debit_card_specializing",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 6,
+      "broad_role": "DataOperator_1",
+      "restricted_role": "GasStationNetworkManager",
+      "restricted_missing_count": 6
+    },
+    {
+      "question_id": 1349,
+      "db_id": "student_club",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "MembershipManager",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 749,
+      "db_id": "superhero",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 6,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 823,
+      "db_id": "superhero",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 7,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "PowerCoordinator",
+      "restricted_missing_count": 6
+    },
+    {
+      "question_id": 213,
+      "db_id": "toxicology",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 5,
+      "broad_role": "ConnectivityAnalyst",
+      "restricted_role": "MolecularViewer",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 297,
+      "db_id": "toxicology",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "MolecularDataEntry",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 390,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "LocalizationCoordinator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1143,
+      "db_id": "european_football_2",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1262,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "PatientCoordinator",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1041,
+      "db_id": "european_football_2",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 7,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 7
+    },
+    {
+      "question_id": 1469,
+      "db_id": "student_club",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 7,
+      "broad_role": "MembershipManager",
+      "restricted_role": "EventCoordinator",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1338,
+      "db_id": "student_club",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 7,
+      "broad_role": "DataOperator_2",
+      "restricted_role": "MembershipManager",
+      "restricted_missing_count": 7
+    },
+    {
+      "question_id": 1189,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 3,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "PatientCoordinator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1522,
+      "db_id": "debit_card_specializing",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "DataOperator_1",
+      "restricted_role": "GasStationNetworkManager",
+      "restricted_missing_count": 5
+    },
+    {
+      "question_id": 819,
+      "db_id": "superhero",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 3,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1187,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 3,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "PatientCoordinator",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1008,
+      "db_id": "formula_1",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 9,
+      "broad_role": "DataOperator_1",
+      "restricted_role": "PublicRelations",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 328,
+      "db_id": "toxicology",
+      "difficulty": "challenging",
+      "resolved_gold_column_count": 4,
+      "broad_role": "MolecularDataEntry",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1324,
+      "db_id": "student_club",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_2",
+      "restricted_role": "MembershipManager",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 687,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 2,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "DataOperator_3",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 734,
+      "db_id": "superhero",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "PowerCoordinator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 949,
+      "db_id": "formula_1",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_2",
+      "restricted_role": "DriverManager",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 934,
+      "db_id": "formula_1",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 9,
+      "broad_role": "RaceAnalyst",
+      "restricted_role": "PublicRelations",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 150,
+      "db_id": "financial",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 6,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "ClientServices",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 704,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 3,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "UserSupportSpecialist",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1111,
+      "db_id": "european_football_2",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 5
+    },
+    {
+      "question_id": 717,
+      "db_id": "superhero",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 6,
+      "broad_role": "DataAnalyst",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 516,
+      "db_id": "card_games",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 1219,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "DataOperator_3",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1446,
+      "db_id": "student_club",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 1,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "EventCoordinator",
+      "restricted_missing_count": 1
+    },
+    {
+      "question_id": 348,
+      "db_id": "card_games",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 5,
+      "broad_role": "CardCatalogManager",
+      "restricted_role": "LocalizationCoordinator",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 936,
+      "db_id": "formula_1",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 9,
+      "broad_role": "RaceAnalyst",
+      "restricted_role": "PublicRelations",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 59,
+      "db_id": "california_schools",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 3,
+      "broad_role": "DataOperator_2",
+      "restricted_role": "AcademicPerformanceAnalyst",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1067,
+      "db_id": "european_football_2",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 4
+    },
+    {
+      "question_id": 963,
+      "db_id": "formula_1",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_1",
+      "restricted_role": "PublicRelations",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 960,
+      "db_id": "formula_1",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 5,
+      "broad_role": "DataOperator_1",
+      "restricted_role": "PublicRelations",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 47,
+      "db_id": "california_schools",
+      "difficulty": "moderate",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_2",
+      "restricted_role": "AcademicPerformanceAnalyst",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 325,
+      "db_id": "toxicology",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "MolecularDataEntry",
+      "restricted_role": "DataOperator_2",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 141,
+      "db_id": "financial",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 4,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "ClientServices",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 1343,
+      "db_id": "student_club",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 2,
+      "broad_role": "DataOperator_3",
+      "restricted_role": "EventCoordinator",
+      "restricted_missing_count": 2
+    },
+    {
+      "question_id": 1221,
+      "db_id": "thrombosis_prediction",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 6,
+      "broad_role": "ClinicalDiagnostician",
+      "restricted_role": "DataOperator_1",
+      "restricted_missing_count": 3
+    },
+    {
+      "question_id": 663,
+      "db_id": "codebase_community",
+      "difficulty": "simple",
+      "resolved_gold_column_count": 1,
+      "broad_role": "CommunityModerator",
+      "restricted_role": "TagCurator",
+      "restricted_missing_count": 1
+    }
+  ]
+}

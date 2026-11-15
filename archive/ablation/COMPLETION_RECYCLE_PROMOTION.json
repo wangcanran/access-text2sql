@@ -1,0 +1,9 @@
+{
+  "time": 1793947034.1922204,
+  "before_sha256": "4795dec5468b54da8b7be37646a02d0c2cb006f96885c64cf853b515bf498aca",
+  "after_sha256": "d7b657e349df5b6ddc22babeeb952ac5932b20a615eb0a501baa2fec432cb928",
+  "scoring_function_AST_identical": true,
+  "helper_modules_identical": true,
+  "change": "Future auxiliary completion uses same scoring with one cluster per worker process",
+  "active_adapter_owners": 0
+}

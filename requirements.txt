@@ -1,0 +1,8 @@
+openai==2.3.0
+sqlglot==30.23.0
+numpy==2.2.6
+requests==2.31.0
+python-dotenv==1.2.4
+tqdm==4.66.2
+func-timeout==4.3.5
+pytest>=7

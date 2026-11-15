@@ -1,0 +1,25 @@
+{
+  "origin_version": "useful_residual_contract_v5_25_integration_v3",
+  "origin_directory": "clarification_main\\experiments\\useful_residual\\integration",
+  "origin_source_sha256": {
+    "compiler.py": "04cdadf38907f4d92fc3e79fc22dac3132ecf5c112c2c3b19d0419ed5fc620df",
+    "live.py": "462247c86e03c953f11b149f90dba3d7503e69bd36d3559aed315489a45a359c",
+    "method.py": "9d3ad82f52320a16441219edf2a824b9b88ef6327f0e97206ed5546df64fab82",
+    "prompts.py": "42ef12f6b1e471193b9bdc4006650137973fa542e52cbb3017b29cd9c0ee9caf",
+    "select_residual.py": "ba96a9c1a372e8fb0a2fad5c67992786260640125e3dcfe890694d3a5c2fd6e9",
+    "test_integration.py": "578cce1c4ae95c253ee42a612ea961587f99fffab6821b7cfa5b44daa8f66240",
+    "__init__.py": "2c5383ea634c26d57bc12bc84d82309ca750700c87425357fddc55d2dccafaa3"
+  },
+  "mechanism_parity": {
+    "compiler.py": true,
+    "prompts.py": true,
+    "method_except_version_metadata": true
+  },
+  "dependency_directories": [
+    "baselines/main_deletion_light_answers_v1",
+    "clarification_deferred_deletion",
+    "clarification_deferred_v3_2",
+    "clarification_contract_v5"
+  ],
+  "note": "Standalone entry/source directory; shares the existing immutable base and overlays, not a self-contained vendored distribution."
+}

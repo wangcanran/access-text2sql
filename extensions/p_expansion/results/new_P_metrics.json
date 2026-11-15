@@ -1,0 +1,155 @@
+[
+  {
+    "scenario": "all",
+    "method": "Direct + RBAC",
+    "N": 445,
+    "SafeEX": 11.797752808988765,
+    "Full": 11.460674157303371,
+    "authorization_counts": {
+      "refusal": 233,
+      "authorized": 100,
+      "unauthorized": 107,
+      "invalid_sql": 5
+    }
+  },
+  {
+    "scenario": "all",
+    "method": "Serial",
+    "N": 445,
+    "SafeEX": 2.247191011235955,
+    "Full": 2.247191011235955,
+    "authorization_counts": {
+      "refusal": 371,
+      "unauthorized": 56,
+      "authorized": 18
+    }
+  },
+  {
+    "scenario": "all",
+    "method": "Policy",
+    "N": 445,
+    "SafeEX": 11.685393258426966,
+    "Full": 11.685393258426966,
+    "authorization_counts": {
+      "refusal": 80,
+      "unauthorized": 299,
+      "authorized": 65,
+      "absent": 1
+    }
+  },
+  {
+    "scenario": "all",
+    "method": "ACCESS",
+    "N": 445,
+    "SafeEX": 49.10112359550562,
+    "Full": 48.764044943820224,
+    "authorization_counts": {
+      "authorized": 316,
+      "refusal": 70,
+      "unauthorized": 35,
+      "absent": 22,
+      "invalid_sql": 2
+    }
+  },
+  {
+    "scenario": "partial_unchanged",
+    "method": "Direct + RBAC",
+    "N": 148,
+    "SafeEX": 12.162162162162161,
+    "Full": 12.162162162162161,
+    "authorization_counts": {
+      "authorized": 37,
+      "unauthorized": 44,
+      "refusal": 67
+    }
+  },
+  {
+    "scenario": "partial_unchanged",
+    "method": "Serial",
+    "N": 148,
+    "SafeEX": 1.3513513513513513,
+    "Full": 1.3513513513513513,
+    "authorization_counts": {
+      "refusal": 126,
+      "unauthorized": 16,
+      "authorized": 6
+    }
+  },
+  {
+    "scenario": "partial_unchanged",
+    "method": "Policy",
+    "N": 148,
+    "SafeEX": 14.18918918918919,
+    "Full": 14.18918918918919,
+    "authorization_counts": {
+      "authorized": 27,
+      "unauthorized": 96,
+      "refusal": 25
+    }
+  },
+  {
+    "scenario": "partial_unchanged",
+    "method": "ACCESS",
+    "N": 148,
+    "SafeEX": 58.445945945945944,
+    "Full": 58.108108108108105,
+    "authorization_counts": {
+      "authorized": 113,
+      "refusal": 21,
+      "unauthorized": 8,
+      "absent": 6
+    }
+  },
+  {
+    "scenario": "partial_additive",
+    "method": "Direct + RBAC",
+    "N": 297,
+    "SafeEX": 11.616161616161616,
+    "Full": 11.11111111111111,
+    "authorization_counts": {
+      "refusal": 166,
+      "authorized": 63,
+      "unauthorized": 63,
+      "invalid_sql": 5
+    }
+  },
+  {
+    "scenario": "partial_additive",
+    "method": "Serial",
+    "N": 297,
+    "SafeEX": 2.6936026936026938,
+    "Full": 2.6936026936026938,
+    "authorization_counts": {
+      "refusal": 245,
+      "unauthorized": 40,
+      "authorized": 12
+    }
+  },
+  {
+    "scenario": "partial_additive",
+    "method": "Policy",
+    "N": 297,
+    "SafeEX": 10.437710437710438,
+    "Full": 10.437710437710438,
+    "authorization_counts": {
+      "refusal": 55,
+      "unauthorized": 203,
+      "authorized": 38,
+      "absent": 1
+    }
+  },
+  {
+    "scenario": "partial_additive",
+    "method": "ACCESS",
+    "N": 297,
+    "SafeEX": 44.44444444444444,
+    "Full": 44.10774410774411,
+    "authorization_counts": {
+      "authorized": 203,
+      "refusal": 49,
+      "unauthorized": 27,
+      "absent": 16,
+      "invalid_sql": 2
+    }
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "method": "useful_residual_v6_1",
+  "acceptance_contract": "render_provenance_v1",
+  "source_sha256": {
+    "acceptance.py": "cb67a34d1a00d3f300e5de9a0badd6374496c9685b65dfc31e79f854fc3ec167",
+    "compiler.py": "04cdadf38907f4d92fc3e79fc22dac3132ecf5c112c2c3b19d0419ed5fc620df",
+    "live.py": "c817acfdf2120e4cd7ef865ccb6a7d41a18e7f3bb77496bd3f61ebd6d90c543d",
+    "method.py": "44e292d1d359dd6a2dd36c1e921cd702c08400ae30d47a334d058a4ecf2881db",
+    "prompts.py": "42ef12f6b1e471193b9bdc4006650137973fa542e52cbb3017b29cd9c0ee9caf",
+    "select_residual.py": "ba96a9c1a372e8fb0a2fad5c67992786260640125e3dcfe890694d3a5c2fd6e9",
+    "test_acceptance.py": "028df9cd41b50fbe2be74cff46783f4af6cf89a26bb496b77ac8cf7504b40e9b",
+    "test_integration.py": "578cce1c4ae95c253ee42a612ea961587f99fffab6821b7cfa5b44daa8f66240",
+    "__init__.py": "91a9bc2cf92ee963223b6cad1a763a0c0dfc754e949620b667f88a7ddb8d2552",
+    "__main__.py": "9cce14aecfb613e083f62a2c1f66e10fa65c33961c588f6346d475b3e4c03611"
+  },
+  "fixture_sha256": {
+    "heldout20.json": "20c2d7c66c56d21c3824e88178191a2d150994b78b87ae1d540b1fcc2d3e6434",
+    "real_controls4.json": "9a3cdf831e40b2cea2c9a157bc5f2c359d2bb10c528801ecf415c9d11443c5b6"
+  },
+  "overlay_v2_sha256": {
+    "__init__.py": "afee0e1c3fca0afc6eb28ee8fbdcd40a070d535ff36f0a25eeb2b43d4bbf7679",
+    "__main__.py": "390612ae6c23ee5730b4f2abf82b8d772a0c0604d6ad84c4e3ad280dd0368299",
+    "baseline.py": "fb457873b8bf293c3be609de25db7b742eda3bb219a52c2304ab36803522f8cb",
+    "graph.py": "9290d7e93a4c8ad0e9d4e2e550570b448d8e119acbf8dafc9db527c11c3978fb",
+    "method.py": "7750b045ed66b99e9cf6dd53284672d62363addc4a2f9a75cfcd063bd925f62a",
+    "prompts.py": "667bcd9155dcb3e914e6569c6144c48af2db7a5925130e74d4d88db5bf50cebd",
+    "test_deferred.py": "7e658e2ccaea7b20891e82c27a8b6221eb8b966d6c36c197b72601a218908dbf"
+  },
+  "overlay_v4_sha256": {
+    "__init__.py": "9e78f34d0254bc9fd8601da238478d2b16b55269a648d13ebdc1686d9b5ac36b",
+    "__main__.py": "91d95713820af4b35f43f1b0cb6db1bf26c81adfc80b4db514aed75f10a40447",
+    "method.py": "ad72a9350db527d7a87da6e5e9e9222225104e6ac37560049bfd1b4b5ad6e702",
+    "prompts.py": "b51089ab73befc7f23f9ef99c76ba3f96827d902e86b0015639496d170db2390",
+    "questions.py": "07b136ffa62874bf207e7dd2f08ed8d143c69e128312eea928b7b9ae14e24d27",
+    "structure.py": "aad532c05783d0582381255882faec1fbf99307fb2c375a9a5859100e2e37745",
+    "test_obligations.py": "dc87249a2072b47f78ddfcec8bd852a32e34570faf840497979d7c78931db62e",
+    "test_structure.py": "abc620613a64b4fdd7f84c3a6e7b57c16e5f48910c673a68ebe6b926b6a9549e",
+    "transaction.py": "9315d7177ae96cf248fb7594f4da6ede249474c16b9e346e8c4934bf317efd41"
+  },
+  "overlay_v5_sha256": {
+    "__init__.py": "ad0dc3505e437bb2aaf6768117b16cedb712da12caa73ca9c98539395b8bcd2e",
+    "bindings.py": "07cea6df1d6ad6d2c56e3d1d7ad0b76acc82c0b8c8a79b4d14782a511a882ea9",
+    "contracts.py": "851091110532defef571db1379e7f2ecebaef520b2c80f5270e859dcfb45e0c4",
+    "live.py": "8819dca2d3006ccaf2ead9923b775de9f466b307edbcfc211d2d6f701752f55b",
+    "method.py": "c9f41a29d6184aba1db7a592cbc0f39e6b1d2f499c53891515f2e98150875b22",
+    "prepare_selection.py": "b6f15b7ec417f49aea5533a70ef7f817e4896d1fb4b83ddcb93c46edf2ace671",
+    "prompts.py": "7f2968677633b931d059396eaea50b346d3a96b716b33d8a7753409226f740f1",
+    "test_contracts.py": "98bfd54976df67e5807110cae71bbdcdef51369d958fb716779872c51dd0beee"
+  },
+  "note": "Packaging checkpoint. Each fresh runner also snapshots and verifies its actual sources."
+}

@@ -1,0 +1,39 @@
+{
+  "0": {
+    "question_id": 0,
+    "db_id": "synthetic_sales",
+    "dataset": "synthetic",
+    "original_question_id": 0,
+    "question": "List product names and customer emails for returned orders in October 2026.",
+    "levels": {
+      "0": {
+        "rewritten_request": "Show product and customer details for orders matching a status and time period."
+      },
+      "1": {
+        "rewritten_request": "Show product and customer details for returned orders in October 2026."
+      },
+      "2": {
+        "rewritten_request": "List product names and customer emails for returned orders in October 2026."
+      }
+    },
+    "flat_units": [
+      {
+        "item_id": "o1",
+        "role": "output",
+        "span": "product names"
+      },
+      {
+        "item_id": "o2",
+        "role": "output",
+        "span": "customer emails"
+      },
+      {
+        "item_id": "m1",
+        "role": "modifier",
+        "span": "for returned orders in October 2026"
+      }
+    ],
+    "reference_sql": "SELECT product_name, customer_email FROM orders WHERE status = 'returned' AND order_date >= '2026-10-01' AND order_date < '2026-11-01';",
+    "source_sha256": "fe7733fd6cac46ae9e65e8d179238663734532bbe87936872652bbd9bb0b8650"
+  }
+}

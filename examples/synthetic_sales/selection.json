@@ -1,0 +1,64 @@
+{
+  "design": "synthetic_demo_only",
+  "fixture_payload_sha256": {
+    "sources.json": "3d3fe56da27ccb0e1afbf79bed754daabc68c114bde38a062cfa3175793f78fd",
+    "roles.json": "c379f3b404e11772a3f3700416a76dcd68b439ee1ec1ae9db31490e548028097",
+    "schemas.json": "91afa5e563cbc556d7623c1304e9a4547a8c28c62a2b934e02aca9f02823a6d1"
+  },
+  "cases": [
+    {
+      "question_id": 0,
+      "level": 0,
+      "db_id": "synthetic_sales",
+      "dataset": "synthetic",
+      "original_question_id": 0,
+      "role": "SalesAnalyst",
+      "policy_source_question_id": 0,
+      "source_sha256": "fe7733fd6cac46ae9e65e8d179238663734532bbe87936872652bbd9bb0b8650",
+      "policy_sha256": "73d2b2d90b62c3a7bc07fac50b84f03e8888705ece1978f03f47b334d792143c",
+      "allowed_columns": [
+        "orders.order_date",
+        "orders.order_id",
+        "orders.product_name",
+        "orders.status"
+      ],
+      "original_permission": "denied"
+    },
+    {
+      "question_id": 0,
+      "level": 1,
+      "db_id": "synthetic_sales",
+      "dataset": "synthetic",
+      "original_question_id": 0,
+      "role": "SalesAnalyst",
+      "policy_source_question_id": 0,
+      "source_sha256": "fe7733fd6cac46ae9e65e8d179238663734532bbe87936872652bbd9bb0b8650",
+      "policy_sha256": "73d2b2d90b62c3a7bc07fac50b84f03e8888705ece1978f03f47b334d792143c",
+      "allowed_columns": [
+        "orders.order_date",
+        "orders.order_id",
+        "orders.product_name",
+        "orders.status"
+      ],
+      "original_permission": "denied"
+    },
+    {
+      "question_id": 0,
+      "level": 2,
+      "db_id": "synthetic_sales",
+      "dataset": "synthetic",
+      "original_question_id": 0,
+      "role": "SalesAnalyst",
+      "policy_source_question_id": 0,
+      "source_sha256": "fe7733fd6cac46ae9e65e8d179238663734532bbe87936872652bbd9bb0b8650",
+      "policy_sha256": "73d2b2d90b62c3a7bc07fac50b84f03e8888705ece1978f03f47b334d792143c",
+      "allowed_columns": [
+        "orders.order_date",
+        "orders.order_id",
+        "orders.product_name",
+        "orders.status"
+      ],
+      "original_permission": "denied"
+    }
+  ]
+}

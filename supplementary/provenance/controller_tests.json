@@ -1,0 +1,12 @@
+{
+  "passed": 46,
+  "skipped": 18,
+  "failed": 0,
+  "files": [
+    "test_question_registry.py",
+    "test_pool_commit.py",
+    "test_state_sync.py",
+    "test_output_contracts.py"
+  ],
+  "note": "Tests executed against the matched v10.2 release; skipped tests require fixtures not bundled with the code package."
+}

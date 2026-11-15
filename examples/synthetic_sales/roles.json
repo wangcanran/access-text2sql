@@ -1,0 +1,17 @@
+[
+  {
+    "db_id": "synthetic_sales",
+    "role": "SalesAnalyst",
+    "policy": {
+      "orders": [
+        "order_id",
+        "product_name",
+        "status",
+        "order_date"
+      ]
+    },
+    "metadata": {
+      "question_id": 0
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "time": 1793945902.4815035,
+  "base": "/path/to/access/output/result_output_completion_20261105_v1",
+  "original_source_sha256": {
+    "score_result_completion_20261105.py": "1c114ecb812dbf62fb4c63031527b7bb7f19511fccc2bebe80f66cc820a77ee1",
+    "result_completion_matcher.py": "2f4c20d17d8f1347a18453a5eef96b3190383435c530f531c885d20f0f044768",
+    "unified_output_correspondence_v3.py": "c626684bb4786fd889d541122b4deabab313015781eeb8615e888c87a6f63606",
+    "recheck_retention_dependency_audit.py": "cea65faad8f6223cee58274995c5a5586da95e53e08978caa7f655325f238121",
+    "retention_output_bindings.py": "dda51a0d024a9473f73480d9481c6beea4cdf63f30fc790e87783c4054ee3746",
+    "retention_result_matcher.py": "c7f52e80c355bc766d2feff6cef0564e053832106e694be50111c16e9ba14735",
+    "retention_sql_output_units.py": "75f8828f9b4600093a979123ea82148ce81fa31fb087e25d14c3175a5ad1da3b"
+  },
+  "change": {
+    "before": "with ProcessPoolExecutor(max_workers=args.workers) as pool:",
+    "after": "with ProcessPoolExecutor(max_workers=args.workers, max_tasks_per_child=1) as pool:"
+  },
+  "scorer_sha256": "92aaed41573074afda2bdb1a58e410e1030fe48e55979515ae0f7a985c7eb1da",
+  "scope": "Process lifecycle only; all cluster scoring functions unchanged; existing cluster results reused"
+}
