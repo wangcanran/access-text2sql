@@ -31,4 +31,4 @@ python tools/run_frontend.py --method access --fixture examples/synthetic_sales 
 
 [查看补充材料 PDF](supplement.pdf)。
 
-[扩展实验补充 PDF（英文）](supplementary/extended_experiments.pdf)：486 A＋486 P 的平衡评测、SafeEX 与 Full 比例曲线，以及配对统计与抽样检查。[表格与文档源文件](extensions/ap_balance/README.md)。
+[扩展实验补充 PDF（英文）](supplementary/extended_experiments.pdf)：沿用论文的原始标注和参考定义，报告 525 A＋525 P 的平衡评测、SafeEX 与 Full 比例曲线，以及配对统计与抽样检查。[表格与文档源文件](extensions/ap_balance/README.md)。

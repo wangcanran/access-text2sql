@@ -15,7 +15,7 @@ COLORS = ["#697582", "#A56D16", "#267A97", "#B43E31"]
 
 
 def main():
-    with (ROOT / "data/strict_ratio_curve.csv").open(encoding="utf-8-sig") as stream:
+    with (ROOT / "data/ratio_curve.csv").open(encoding="utf-8-sig") as stream:
         rows = list(csv.DictReader(stream))
     plt.rcParams.update({
         "font.family": "DejaVu Sans",

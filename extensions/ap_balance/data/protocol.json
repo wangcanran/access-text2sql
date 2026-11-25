@@ -1,19 +1,16 @@
 {
-  "version": "ap50_reference_audit_v1",
+  "version": "ap50_paper_convention_report_v1",
+  "source_protocol_version": "ap50_reference_audit_v1",
+  "scope": "Reported cohort only; excerpt of the retrospective source protocol.",
   "date": "2026-11-16",
   "design": "Retrospective fixed-cohort reanalysis of real existing predictions; no new inference and no model-output-based selection.",
   "requested_ratio": {
     "A": 0.5,
     "P": 0.5
   },
-  "original_plan_superseded": "Retain all A and add 877 new P; user subsequently preferred a subset of existing feasible cases.",
-  "compatible": {
+  "cohort": {
     "P": "All 525 requests in the original benchmark-positive plus expansion definition",
     "A": "525 sampled without replacement from original 1402 A"
-  },
-  "strict": {
-    "P": "All nonempty structurally safe proper output projections, full Gold blocked, joint witness authorized and exact rows/order verified; exclude aggregate-label-only transforms",
-    "A": "Same-size subset from original A whose full Gold is natively authorized and executes; no candidate results consulted"
   },
   "sampling": {
     "seed": "ACCESS_AP50_20261116_v1",
@@ -21,13 +18,13 @@
       "dataset",
       "level"
     ],
-    "allocation": "Hamilton largest remainder proportional to eligible A stratum sizes",
-    "within_stratum": "ascending SHA256(seed + request_id); no retries or seed search"
+    "allocation": "Hamilton largest remainder proportional to the original A pool's stratum sizes",
+    "within_stratum": "ascending SHA256(JSON([seed, request_id])); no seed search"
   },
   "statistics": {
     "primary": "Equal request-weighted SafeEX and Full, evidence lower/upper separately",
     "paired": "Same request IDs for all four methods",
-    "sensitivity": "1000 predeclared deterministic A resamples; P fixed; does not constitute new inference",
+    "sensitivity": "1000 deterministic A resamples with P fixed; retrospective sampling sensitivity, no new inference",
     "uncertainty": "2000 paired cluster bootstrap replicates by original dataset/database/question ID, same cluster weight across methods and A/P; renormalize A/P to 50/50 per draw; finite-cohort descriptive interval"
   },
   "limitations": [
@@ -40,5 +37,5 @@
     "artifacts\\twenty_arm_completion_20261105\\fair_column_suite_v4\\column_reference.jsonl": "0fd9fd0a4bb074de0bfdb1404ac52deec6449eecaab1fe9b03d6054c2ac2fa8f",
     "artifacts\\p_expansion_real_20261115\\references.jsonl": "0c2f1d9b0d9380c3557693ef0ead45ebdaa3a99b8ff342359a1d88b95882833e"
   },
-  "candidate_outputs_read_by_this_script": false
+  "candidate_outputs_read_by_selection": false
 }

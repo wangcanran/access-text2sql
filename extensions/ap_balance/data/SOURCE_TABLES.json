@@ -1,54 +1,34 @@
 {
-  "strict_results.json": {
-    "source": "strict_partial/RESULTS.json",
-    "sha256": "7bbcaa53fca978e3fdf486a9b07038b0bd53bb76cbeef080953677a4b9dbff79"
-  },
-  "strict_selection.json": {
-    "source": "strict_partial/SELECTION.json",
-    "sha256": "1f0917c64ede9c8566592e1ee099acb4b79093305faa26805d2ac9de0bf03253"
-  },
-  "strict_metrics.csv": {
-    "source": "strict_partial/metrics.csv",
-    "sha256": "cb86f8078952fc827c6e9521fc52b4dee1207dd6b17f7889ab538b1edfd8afc2"
-  },
-  "strict_composition.csv": {
-    "source": "strict_partial/composition.csv",
-    "sha256": "6a0471f98f0a2c43782752f94a5bf9f13c2bd8a4befb9a8c7c12ab0277434fc1"
-  },
-  "strict_ratio_curve.csv": {
-    "source": "strict_partial/ratio_curve.csv",
-    "sha256": "51b065638e150274e62b67684f2a3d074fb05c02a2ba0a8b249abc6595c0654a"
-  },
-  "paired_cluster_bootstrap.csv": {
-    "source": "strict_partial/paired_cluster_bootstrap.csv",
-    "sha256": "00311124bbc1d98af0412e6066a668331556615bd733df289afd608e9411d6a1"
-  },
-  "A_resampling_summary.csv": {
-    "source": "strict_partial/A_resampling_summary.csv",
-    "sha256": "c6f9f3bebefcddcaaf8524502ec77f674d3b26136d3c1bb1ac0c4f55a3501654"
-  },
-  "legacy_results.json": {
+  "results.json": {
     "source": "paper_compatible/RESULTS.json",
     "sha256": "aa717cd45a00038079233824ec223e206378ab871c72046e690d3f644e5b5635"
   },
-  "legacy_selection.json": {
+  "selection.json": {
     "source": "paper_compatible/SELECTION.json",
     "sha256": "adbce097b9e7dedd5ddd835a341eb1a23476c53863441583dfee286119d691d6"
   },
-  "reference_audit_summary.json": {
-    "source": "REFERENCE_AUDIT_COMPLETE.json",
-    "sha256": "d701707c586c2bb00e6154a75b2e9daf604ca6ed68663bd9426f960a11b83a49"
+  "metrics.csv": {
+    "source": "paper_compatible/metrics.csv",
+    "sha256": "fd0589e7a3b45e866210474e833e96b5bf498fd6d49650e44e47ae0d10d67f17"
+  },
+  "composition.csv": {
+    "source": "paper_compatible/composition.csv",
+    "sha256": "25d95b9238bc23761ad64472445993e4a0e1cf62d63992ed963a7b2b2d789022"
+  },
+  "ratio_curve.csv": {
+    "source": "paper_compatible/ratio_curve.csv",
+    "sha256": "1c521b3dc4fbf700414c619ae572bffd9ea7c17144444ee44130c77e0dd83f03"
+  },
+  "paired_cluster_bootstrap.csv": {
+    "source": "paper_compatible/paired_cluster_bootstrap.csv",
+    "sha256": "59bc0934319a7a9aa03b8012358430133c991c6da14098a9e315ba595b728f53"
+  },
+  "A_resampling_summary.csv": {
+    "source": "paper_compatible/A_resampling_summary.csv",
+    "sha256": "751c85f615b95f3165198d5c70ec4c995949d952a4c47662110dcc5182fef4c9"
   },
   "score_audit_summary.json": {
     "source": "SCORE_AUDIT_COMPLETE.json",
     "sha256": "9eae06d534339886b7f7b0c317097f20f1233302a246bebbd3c5cfd584d1aa6e"
-  },
-  "package_verification.json": {
-    "source": "VERIFICATION.json",
-    "sha256": "cf0356e4b9e5e50a1a9dbfd33407e1b3cfcf823e001e8ed20442678520962f36"
-  },
-  "protocol.json": {
-    "source": "PROTOCOL.json",
-    "sha256": "d308ca2e85b68e2950d81d5e737ae59e4500833b665680bbee4ac3406e23f8c4"
   }
 }

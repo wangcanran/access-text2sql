@@ -49,14 +49,11 @@ def bounds(row, metric):
 def main():
     for name, digest in load_json("TABLE_HASHES.json").items():
         assert hashlib.sha256((ROOT / "data" / name).read_bytes()).hexdigest() == digest, name
-    results = load_json("strict_results.json")
-    selection = load_json("strict_selection.json")
-    metrics = load_csv("strict_metrics.csv")
-    curves = load_csv("strict_ratio_curve.csv")
-    legacy = load_json("legacy_results.json")
-    methods = [row["method"] for row in results["main"]]
-    assert selection["A"] == selection["P"] == 486
-    assert results["paired_method_records"] == 3888
+    results = load_json("results.json")
+    selection = load_json("selection.json")
+    metrics = load_csv("metrics.csv")
+    assert selection["A"] == selection["P"] == 525
+    assert results["paired_method_records"] == 4200
     story, markdown = [], []
 
     def paragraph(text, style=BODY):
@@ -101,20 +98,21 @@ def main():
 
     paragraph("ACCESS: Supplementary Experiments", TITLE)
     paragraph("Sensitivity to the Proportion of Partially Serviceable Requests", SUBTITLE)
-    paragraph("Post-submission extension | DeepSeek Flash | Balanced cohort: 972 requests", CAPTION)
+    paragraph("Post-submission extension | DeepSeek Flash | Balanced cohort: 1,050 requests", CAPTION)
     heading("S1. Experimental question and design")
     paragraph(
         "This extension asks whether the overall output-fulfillment ranking changes when requests with "
         "authorized partial outputs account for a larger share of evaluation. In the original output-evaluation "
         "cohort, 1,402 benchmark-allowed requests and 80 reference-positive benchmark-denied requests make "
         "up 1,482 requests; the latter account for only 5.40%. We construct a balanced cohort containing "
-        "486 fully authorized requests (A) and 486 requests with verified authorized partial-output references (P). "
-        "All four methods are evaluated on the same 972 request IDs."
+        "525 benchmark-allowed requests (A) and 525 reference-positive benchmark-denied requests (P), "
+        "following the original study's labels and fixed-reference convention. All four methods are "
+        "evaluated on the same 1,050 request IDs."
     )
     paragraph(
         "The experiment combines real model outputs from the original study and a subsequent run on 445 new P "
         "requests. The balanced analysis reuses those outputs; it performs no additional inference. Cohort "
-        "eligibility and selection use input metadata and reference audits, independently of candidate scores. "
+        "construction and selection use input metadata and fixed references, independently of candidate scores. "
         "The protocol records a retrospective analysis rather than a prospective preregistration."
     )
     heading("S2. Cohort construction and reference validation")
@@ -125,35 +123,38 @@ def main():
         "effective cases by source question, level, and allowed-column set, rather than by role name alone."
     )
     paragraph(
-        "<b>Eligibility.</b> A requires the complete Gold SQL to be authorized by the native database engine "
-        "and to execute successfully. This yields 1,341 eligible A requests. P requires the complete Gold "
-        "SQL to be blocked while an authorized SQL witness reproduces a nonempty proper projection of the "
-        "Gold output. The witness must preserve necessary conditions, all result rows, duplicate multiplicities, "
-        "and required ordering. Transformations involving DISTINCT or set-projection changes, and projections "
-        "that remove an aggregate and leave only grouping labels, are excluded from this strict cohort."
+        "<b>Reference convention.</b> The A sampling pool consists of all 1,402 requests labeled allowed "
+        "in the original benchmark. P retains all 80 reference-positive requests from the original study "
+        "and adds 445 requests with authorized retained-output references. The original benchmark labels "
+        "and the 80 original reference targets are unchanged. A and P denote evaluation partitions; "
+        "candidate SQL is independently checked for authorization, execution, and output correctness."
     )
     paragraph(
-        "P contains 41 eligible original requests and all 445 expansion requests. The expansion uses existing "
+        "The 445 expansion requests use existing "
         "role permissions for 148 requests and additive grants for 297; it contains no permission revocations. "
-        "Its 445 requests span 58 source questions and 149 question/policy combinations. Permissions are fixed "
-        "before each run and shared by all methods. A complete Gold query remains blocked in every added case."
+        "These 445 requests span 58 source questions and 149 question/policy combinations. Permissions are fixed "
+        "before each run and shared by all methods. A complete Gold query remains blocked in every added case. "
+        "An authorized SQL witness must reproduce a nonempty proper projection of the Gold output while "
+        "preserving necessary conditions, complete result rows, duplicate multiplicities, and required ordering. "
+        "The expansion witnesses change output projection while retaining the non-output clauses."
     )
     paragraph(
-        "<b>Selection.</b> All 486 eligible P requests are retained. We select 486 A requests without replacement, "
+        "<b>Selection.</b> All 525 P requests are retained. We select 525 A requests from the original "
+        "1,402-request pool without replacement, "
         "stratifying by dataset and level. Hamilton largest-remainder allocation determines stratum quotas; "
         "within each stratum, a fixed SHA-256 ordering of the seed and request ID determines selection. The "
         "seed is <font name='Courier' size='8.4'>ACCESS_AP50_20261116_v1</font>."
     )
     paragraph(
-        "The reference audit covers 1,927 available requests and 558 cache-deduplicated reference queries. "
-        "SQLite checks use its native authorizer; PostgreSQL checks use isolated transactional roles with "
-        "explicit column grants and rollback. The 20 SQLite database snapshots used by the expansion match "
-        "their recorded hashes. No candidate prediction is used to decide reference eligibility."
+        "All 149 expansion question/policy combinations have authorized witnesses that score one under "
+        "the evaluation matcher. Native SQLite authorization verifies the accessed columns. The 20 SQLite "
+        "database snapshots used by the expansion match their recorded hashes. References and effective "
+        "policies are fixed independently of candidate predictions."
     )
 
     page()
     heading("S3. Composition and evaluation protocol")
-    composition = load_csv("strict_composition.csv")
+    composition = load_csv("composition.csv")
     selected_p = {}
     for row in composition:
         if row["partition"] == "P":
@@ -162,12 +163,13 @@ def main():
     labels = {"bird": "BIRD", "spider": "Spider", "livesqlbench": "LiveSQLBench"}
     rows = [[labels[row["dataset"]], "L" + str(row["level"]), row["eligible"], row["selected"],
              selected_p[(row["dataset"], row["level"])]] for row in selection["A_strata"]]
-    rows.append(["Total", "All", 1341, 486, 486])
-    table("Table S1. Strict cohort by dataset and specificity level.",
-          ["Dataset", "Level", "Eligible A", "Selected A", "Selected P"], rows,
+    rows.append(["Total", "All", 1402, 525, 525])
+    table("Table S1. Balanced cohort by dataset and specificity level.",
+          ["Dataset", "Level", "Original A pool", "Selected A", "Selected P"], rows,
           [0.29, 0.12, 0.19, 0.20, 0.20],
-          "Each partition contains 162 requests at each level. The 972 requests represent 345 source-question "
-          "clusters; P represents 62. Sampling A does not require selecting every sibling level of a question.")
+          "Selected A contains 175 requests at each level; P contains 174, 176, and 175 at L0, L1, and L2. "
+          "The 1,050 requests represent 369 source-question clusters; P represents 76. Sampling A does "
+          "not require selecting every sibling level of a question.")
     paragraph(
         "<b>Methods and settings.</b> We compare Direct + RBAC, Serial, Policy, and ACCESS using DeepSeek "
         "Flash. The expansion retains the original method implementations and prompt variants: Direct and "
@@ -184,8 +186,8 @@ def main():
         "and complete projected result rows, including duplicates and required order. Authorization covers "
         "all referenced columns, including non-output predicates, joins, aggregates, and ordering. "
         "<b>Full</b> is the fraction with request-level SafeEX equal to one. It measures complete fixed-reference "
-        "fulfillment; a P reference includes only the retained outputs, so Full does not mean fulfilling the "
-        "entire original request. Extra authorized candidate columns do not by themselves invalidate Full."
+        "fulfillment; a P reference can cover only part of the original goals, so Full does not necessarily "
+        "mean fulfilling the entire original request. Extra authorized candidate columns do not by themselves invalidate Full."
     )
     paragraph(
         "Refusal, absent SQL, confirmed unauthorized access, and failed execution receive zero. Failed "
@@ -209,29 +211,29 @@ def main():
     rows = [[row["method"], bounds(row, "SafeEX"), bounds(row, "Full"),
              bounds(by_partition[row["method"], "A"], "SafeEX"),
              bounds(by_partition[row["method"], "P"], "SafeEX")] for row in results["main"]]
-    table("Table S2. Output fulfillment on the strict 50/50 cohort (%).",
+    table("Table S2. Output fulfillment on the 50/50 cohort (%).",
           ["Method", "SafeEX", "Full", "SafeEX on A", "SafeEX on P"], rows,
           [0.22, 0.20, 0.20, 0.21, 0.17],
-          "Overall N = 972; each partition N = 486. Ranges are scoring evidence bounds. A single value "
+          "Overall N = 1,050; each partition N = 525. Ranges are scoring evidence bounds. A single value "
           "indicates resolved evidence. Methods share exactly the same requests and reference targets.")
     paragraph(
-        "ACCESS reaches 53.85-54.26% overall SafeEX, compared with 38.41-38.93% for Policy and "
-        "32.97-33.38% for Serial. Its overall Full is 52.37-52.78%, compared with 37.55-38.07% for "
-        "Policy. The SafeEX lower-endpoint advantage over Policy is 15.44 percentage points; even ACCESS's "
-        "lower endpoint exceeds Policy's upper endpoint by 14.92 points."
+        "ACCESS reaches 51.85-52.23% overall SafeEX, compared with 37.49-37.96% for Policy and "
+        "31.85-32.23% for Serial. Its overall Full is 50.48-50.86%, compared with 36.67-37.14% for "
+        "Policy. The SafeEX lower-endpoint advantage over Policy is 14.36 percentage points; even ACCESS's "
+        "lower endpoint exceeds Policy's upper endpoint by 13.89 points."
     )
     paragraph(
         "The partition results explain this ordering. ACCESS has lower SafeEX on A than Policy "
-        "(57.39% versus 65.30% at lower endpoints), but substantially higher SafeEX on P "
-        "(50.31% versus 11.52%). With equal partition sizes, overall SafeEX equals one half of each "
-        "partition's score. The -7.91-point A difference and +38.79-point P difference therefore contribute "
-        "-3.96 and +19.39 points to the overall difference, respectively, yielding +15.44 points before "
-        "rounding. ACCESS's advantage here reflects stronger partial-output fulfillment alongside a "
-        "remaining cost on fully authorized requests."
+        "(54.65% versus 62.54% at lower endpoints), but substantially higher SafeEX on P "
+        "(49.05% versus 12.43%). With equal partition sizes, overall SafeEX equals one half of each "
+        "partition's score. The A and P differences contribute -3.95 and +18.31 points to the overall "
+        "difference, respectively, yielding +14.36 points, with values rounded independently. "
+        "ACCESS's advantage here reflects stronger retained-output fulfillment alongside a "
+        "remaining cost on benchmark-allowed requests."
     )
     heading("S6. Sensitivity to the proportion of P requests")
     paragraph(
-        "To construct each curve, we fix the same 486 A requests and add nested prefixes of P in a "
+        "To construct each curve, we fix the same 525 A requests and add nested prefixes of P in a "
         "metadata-only SHA-256 ordering using the fixed seed and the tag P_curve. The ten target shares "
         "range from 5% to 50%. Integer counts determine the actual plotted shares. Every point aggregates "
         "the corresponding recorded request-level outputs; no score is generated by interpolating partition means."
@@ -244,8 +246,8 @@ def main():
         "A is fixed; P is nested; all methods use the same requests at each point.", CAPTION
     )
     paragraph(
-        "At the first point (26 P requests; 5.078%), ACCESS's SafeEX is 57.21-57.99%, below both Serial "
-        "and Policy. At the 20.066% point (122 P requests), ACCESS's lower SafeEX and Full endpoints "
+        "At the first point (28 P requests; 5.063%), ACCESS's SafeEX is 54.60-55.32%, below both Serial "
+        "and Policy. At the 25% point (175 P requests), ACCESS's lower SafeEX and Full endpoints "
         "exceed both baselines' upper endpoints. At 50%, ACCESS's SafeEX is slightly lower than at the "
         "first point, while the baselines decrease more. The observed reversal comes from the request "
         "composition and the methods' different partition performance, rather than an increase in ACCESS's "
@@ -255,8 +257,8 @@ def main():
     page()
     heading("S7. Sampling sensitivity and paired comparisons")
     paragraph(
-        "<b>Choice of A subset.</b> We hold all 486 P requests fixed and draw 1,000 alternative A subsets "
-        "of size 486 from the eligible pool using the same dataset-by-level quotas. Replicate seeds are "
+        "<b>Choice of A subset.</b> We hold all 525 P requests fixed and draw 1,000 alternative A subsets "
+        "of size 525 from the original A pool using the same dataset-by-level quotas. Replicate seeds are "
         "formed deterministically from the fixed seed and the replicate index; every replicate is retained. "
         "This examines sensitivity to which eligible A requests are included, without rerunning a model."
     )
@@ -267,9 +269,9 @@ def main():
           ["Comparator", "ACCESS lower > comparator upper", "Smallest margin (pp)"],
           rows, [0.25, 0.47, 0.28],
           "The margin compares ACCESS's lower score with the comparator's upper score within the same "
-          "replicate. Results describe the audited candidate pool.")
+        "replicate. Results describe the original A candidate pool.")
     paragraph(
-        "<b>Paired source-question bootstrap.</b> We draw 2,000 bootstrap samples of the 345 source-question "
+        "<b>Paired source-question bootstrap.</b> We draw 2,000 bootstrap samples of the 369 source-question "
         "clusters with replacement (seed 20261116). A cluster is identified by dataset, database, and original "
         "question ID. Its weight is shared across all methods, levels, policies, and A/P membership. Each "
         "replicate normalizes A and P separately and averages them equally, preserving the 50/50 estimand. "
@@ -286,85 +288,37 @@ def main():
           "Evidence range = [ACCESS lower - comparator upper, ACCESS upper - comparator lower]. "
           "Bootstrap intervals describe source-question resampling and are not evidence bounds.")
     paragraph(
-        "All three SafeEX difference intervals have positive lower endpoints. The same paired procedure "
-        "also gives positive Full difference intervals: 23.07-34.67 points versus Direct, 14.80-25.78 "
-        "versus Serial, and 9.03-20.37 versus Policy. A-subset sensitivity and cluster bootstrap address "
-        "different sources of variation: the former changes the selected A requests with P fixed, while "
-        "the latter preserves dependencies among variants of each source question."
+        "All three SafeEX difference intervals have positive lower endpoints. Full difference intervals "
+        "are also positive: 22.08-33.19 points versus Direct, 14.30-24.77 versus Serial, and 8.56-19.10 "
+        "versus Policy. These cluster intervals account for related variants; A-subset sensitivity instead "
+        "examines which A requests are selected with P fixed."
     )
-    heading("S8. Interpretation and scope")
+    heading("S8. Interpretation, scope, and reproducibility")
     paragraph(
-        "The results show that overall output-fulfillment rankings can change when evaluation contains "
-        "more requests with authorized partial outputs. This supports reporting both overall scores and "
-        "A/P-specific performance. It also identifies an improvement target for ACCESS: retaining its "
-        "partial-service benefit while reducing losses on fully authorized requests."
+        "The ranking changes as reference-positive denied requests become more common. Reporting both "
+        "overall and A/P-specific scores exposes the tradeoff: ACCESS provides more retained output on P, "
+        "but still needs to reduce its losses on benchmark-allowed requests."
     )
     paragraph(
-        "The curves describe this finite audited pool. P differs from A in source-question, dataset, and "
-        "policy composition; the expansion adds BIRD and Spider cases, not new LiveSQLBench cases. P's "
-        "486 requests arise from 62 source questions, so permission and specificity variants do not supply "
-        "486 independent questions. The analysis does not isolate a causal effect of P proportion or "
-        "estimate its prevalence in deployment. It evaluates output fulfillment, not safe handling on the "
-        "remaining denied requests outside A + P."
+        "P differs from A in questions, datasets, and policies; the expansion adds BIRD and Spider cases "
+        "only. Its 525 requests represent 76 source questions, rather than independent observations. "
+        "The curves describe this pool, not a causal effect of P proportion or its deployment prevalence. "
+        "Requests outside A + P are not assessed by this output-fulfillment analysis."
     )
 
-    page()
-    heading("S9. Alignment with the original reference convention")
     paragraph(
-        "For comparison with the original reference convention, a separate analysis retains all 80 original "
-        "P references plus the 445 expansion requests, and samples 525 A requests from the original "
-        "1,402-request A pool. This produces 1,050 requests and 4,200 method/request records. Its outcomes "
-        "are reported separately from the strict cohort because their eligibility definitions differ."
-    )
-    table("Table S5. Balanced analysis using the original reference convention (%).",
-          ["Method", "SafeEX", "Full"],
-          [[row["method"], bounds(row, "SafeEX"), bounds(row, "Full")] for row in legacy["main"]],
-          [0.36, 0.32, 0.32],
-          "A = 525, P = 525. This cohort overlaps the strict cohort and is not an independent replication.")
-    paragraph(
-        "The strict definition excludes 39 original P references: 27 already have an authorized complete "
-        "Gold query, six involve DISTINCT or set-projection transformations, and six retain only grouping "
-        "labels after removal of an aggregate. Its A eligibility also excludes 61 original A requests "
-        "whose complete Gold queries are blocked by native authorization. These are reference-eligibility "
-        "decisions for this extension; the original benchmark files and recorded predictions remain unchanged. "
-        "ACCESS leads the three comparators under both balanced definitions."
-    )
-    heading("S10. Reproducibility and verification")
-    paragraph(
-        "The source experiment package preserves inputs, effective permissions, target positions, Gold and "
-        "witness SQL, all four methods' candidate SQL and outcomes, native audit evidence, selection lists, "
-        "and recomputation scripts. Independent verification confirms equal A/P counts, unique effective "
-        "cases, complete four-method pairing, fixture payload hashes, and request-level metric aggregation. "
-        "This check passes for both cohorts: 3,888 records for strict and 4,200 for the original convention."
+        "Verification confirms equal A/P counts, unique effective cases, 4,200 paired records, fixture "
+        "hashes, and request-level aggregation. "
+        "<font name='Courier' size='8.5'>extensions/ap_balance/</font> contains frozen report tables, "
+        "audit and selection metadata, hashes, and build scripts. Full reaggregation requires the source "
+        "experiment package; SQL re-execution also requires the original database snapshots."
     )
     paragraph(
-        "The repository directory <font name='Courier' size='8.5'>extensions/ap_balance/</font> includes "
-        "the frozen tables used in this PDF, audit summaries, cohort metadata, table hashes, and the "
-        "document/figure build scripts. The curve table includes exact counts at every point. These files "
-        "support rebuilding the report; the full local experiment package is needed for request-level "
-        "reaggregation. Native SQL re-execution additionally requires the recorded database snapshots."
+        "Implementation base: "
+        "<font name='Courier' size='8.3'>54f6d73e8fce20c176aa439588291916eb6279ee</font>. "
+        "Selection metadata records the seed, quotas, selection hash, and input hash. Published report "
+        "tables are byte-identical to their source tables."
     )
-    paragraph("Run the following commands from the complete source experiment package:")
-    for command in ["python code/verify.py", "python code/select_cohorts.py", "python code/analyze.py"]:
-        paragraph(command, CODE)
-    paragraph(
-        "Selection reconstruction uses only the request universe and reference audit. Analysis reuses "
-        "recorded outputs, applies hash-bound native scoring reconciliations, and recomputes metrics, "
-        "composition curves, resampling checks, and paired intervals. Verification checks the frozen "
-        "package manifest before reconstruction. Rendering is independent of model inference."
-    )
-    paragraph(
-        "Implementation base: Git commit <font name='Courier' size='8.3'>54f6d73e8fce20c176aa439588291916eb6279ee</font>. "
-        "Strict selection SHA-256: <font name='Courier' size='7.4'>"
-        "ae53725c49c832c3ac385477ef881e23be673147b2a5a29aca676cb1b078c967</font>. "
-        "Request-universe and source-file hashes are recorded in the accompanying provenance tables.", CAPTION
-    )
-    paragraph(
-        "Code and supporting materials: "
-        "<link href='https://github.com/wangcanran/access-text2sql' color='#9F3E2D'>"
-        "github.com/wangcanran/access-text2sql</link>.", CAPTION
-    )
-
     def decorate(canvas, document):
         canvas.saveState()
         canvas.setFillColor(INK)
