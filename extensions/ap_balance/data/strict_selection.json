@@ -1,0 +1,75 @@
+{
+  "version": "strict_partial",
+  "A": 486,
+  "P": 486,
+  "E": 972,
+  "P_share": 0.5,
+  "eligible_A": 1341,
+  "unique_original_questions": 345,
+  "P_original_questions": 62,
+  "P_origins": {
+    "expansion_445": 445,
+    "paper": 41
+  },
+  "A_strata": [
+    {
+      "dataset": "bird",
+      "level": 0,
+      "eligible": 167,
+      "selected": 61
+    },
+    {
+      "dataset": "bird",
+      "level": 1,
+      "eligible": 169,
+      "selected": 61
+    },
+    {
+      "dataset": "bird",
+      "level": 2,
+      "eligible": 169,
+      "selected": 61
+    },
+    {
+      "dataset": "livesqlbench",
+      "level": 0,
+      "eligible": 98,
+      "selected": 35
+    },
+    {
+      "dataset": "livesqlbench",
+      "level": 1,
+      "eligible": 97,
+      "selected": 35
+    },
+    {
+      "dataset": "livesqlbench",
+      "level": 2,
+      "eligible": 93,
+      "selected": 34
+    },
+    {
+      "dataset": "spider",
+      "level": 0,
+      "eligible": 181,
+      "selected": 66
+    },
+    {
+      "dataset": "spider",
+      "level": 1,
+      "eligible": 182,
+      "selected": 66
+    },
+    {
+      "dataset": "spider",
+      "level": 2,
+      "eligible": 185,
+      "selected": 67
+    }
+  ],
+  "seed": "ACCESS_AP50_20261116_v1",
+  "selection_sha256": "ae53725c49c832c3ac385477ef881e23be673147b2a5a29aca676cb1b078c967",
+  "input_file_sha256": "ae0bb66edb977b829a02bc503a623bd1e2b179b1293e05a5533ee7c814f51b5b",
+  "candidate_outputs_read": false,
+  "partial_level_groups": "Row-stratified sampling; not all L0/L1/L2 siblings are selected. Inferential resampling clusters by original question."
+}

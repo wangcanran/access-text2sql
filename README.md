@@ -38,3 +38,5 @@ Database files, model weights, credentials and raw API logs are external assets.
 ## Supplementary material
 
 [Read the supplementary material](supplement.pdf).
+
+[Extended experiments: sensitivity to partially serviceable request composition](supplementary/extended_experiments.pdf). This post-submission supplement reports a verified 486 A + 486 P cohort, SafeEX and Full composition curves, and paired sampling analyses. [Tables and document sources](extensions/ap_balance/README.md).

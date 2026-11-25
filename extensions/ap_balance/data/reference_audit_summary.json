@@ -1,0 +1,18 @@
+{
+  "reference_rows": 1927,
+  "eligible_A": 1341,
+  "eligible_P": 486,
+  "A_native": {
+    "authorized": 1341,
+    "blocked": 61
+  },
+  "strict_P_by_origin": {
+    "paper": 41,
+    "expansion_445": 445
+  },
+  "errors": [],
+  "queries_executed": 558,
+  "candidate_outputs_read": false,
+  "model_calls": 0,
+  "task_sha256": "8b3c372cd2d867fbaf52fb15009b7526196405cc7246c00bee299b7e0c6984e7"
+}

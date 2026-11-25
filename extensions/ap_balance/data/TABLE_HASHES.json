@@ -1,0 +1,17 @@
+{
+  "A_resampling_summary.csv": "c6f9f3bebefcddcaaf8524502ec77f674d3b26136d3c1bb1ac0c4f55a3501654",
+  "expansion_provenance.json": "599b668e4e81b5a2bf98cc7b5fe6b1e6f1ae9e6723b92145c3f8b254122f9dc8",
+  "legacy_results.json": "aa717cd45a00038079233824ec223e206378ab871c72046e690d3f644e5b5635",
+  "legacy_selection.json": "adbce097b9e7dedd5ddd835a341eb1a23476c53863441583dfee286119d691d6",
+  "package_verification.json": "cf0356e4b9e5e50a1a9dbfd33407e1b3cfcf823e001e8ed20442678520962f36",
+  "paired_cluster_bootstrap.csv": "00311124bbc1d98af0412e6066a668331556615bd733df289afd608e9411d6a1",
+  "protocol.json": "d308ca2e85b68e2950d81d5e737ae59e4500833b665680bbee4ac3406e23f8c4",
+  "reference_audit_summary.json": "d701707c586c2bb00e6154a75b2e9daf604ca6ed68663bd9426f960a11b83a49",
+  "score_audit_summary.json": "9eae06d534339886b7f7b0c317097f20f1233302a246bebbd3c5cfd584d1aa6e",
+  "SOURCE_TABLES.json": "62b4b65e7c59916383fa5c437cb9c788b36b990bc74948fc81a88352f4fb5884",
+  "strict_composition.csv": "6a0471f98f0a2c43782752f94a5bf9f13c2bd8a4befb9a8c7c12ab0277434fc1",
+  "strict_metrics.csv": "cb86f8078952fc827c6e9521fc52b4dee1207dd6b17f7889ab538b1edfd8afc2",
+  "strict_ratio_curve.csv": "51b065638e150274e62b67684f2a3d074fb05c02a2ba0a8b249abc6595c0654a",
+  "strict_results.json": "7bbcaa53fca978e3fdf486a9b07038b0bd53bb76cbeef080953677a4b9dbff79",
+  "strict_selection.json": "1f0917c64ede9c8566592e1ee099acb4b79093305faa26805d2ac9de0bf03253"
+}

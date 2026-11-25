@@ -1,0 +1,54 @@
+{
+  "construction": {
+    "new_requests": 445,
+    "question_policy_pairs": 149,
+    "unique_original_questions": 58,
+    "counts": {
+      "partial_additive": 297,
+      "partial_unchanged": 148
+    },
+    "datasets": {
+      "bird": 150,
+      "spider": 295
+    },
+    "levels": {
+      "0": 148,
+      "1": 149,
+      "2": 148
+    },
+    "exclusions": {
+      "requires_revocation_separate_experiment": 412,
+      "semantic_review_pending": 14,
+      "already_in_original_2800": 11,
+      "duplicate_effective_policy": 4,
+      "postgres_execution_pending": 85,
+      "non_projection_witness_review": 3
+    },
+    "max_P_share": 0.27244421380384015,
+    "source_files_unchanged": true,
+    "files": {
+      "backend_templates.jsonl": "5e7771c8faf26cf336b96937e6ec2e3ebc82f27725c5b902157cd76934e14d4a",
+      "exclusions.jsonl": "5a575bad08300a3fb7ccc2fa6d6af7fa6041d90512d8aebd1853cfe773ce3d87",
+      "fixture\\MANIFEST.json": "ce60bb1f4d115c42a24c5d96c16aaee0d27ab8fb4c00a2099c8f5c807b532f3d",
+      "fixture\\roles.json": "5d6d6aa332fe44075e08ce7c2e7f83fd9cd4b15d1b494b28dab78006fff6a25c",
+      "fixture\\schemas.json": "b8736eeebf6e4556440e4703dd5ddba6d03ec3119e2388c889205a433b9877e7",
+      "fixture\\selection.json": "3e25f7e4fe1584e436a1021e7163b57faafd879f9bc6a370c043b4d886d2dcac",
+      "fixture\\sources.json": "25e5cfb7b12e4d24a10c69f80fb730f2911c2330e7018f4acb992bbc1da4f7b8",
+      "references.jsonl": "0c2f1d9b0d9380c3557693ef0ead45ebdaa3a99b8ff342359a1d88b95882833e",
+      "RUN_PLAN.json": "8b3c44be1262c3878aa0bc867ffaa504435331303927d2c0bb5fb129808d1104"
+    },
+    "rendered_policy_matches_structured_policy": true
+  },
+  "run_parameters": {
+    "model": "deepseek-flash",
+    "methods": [
+      "baseline",
+      "serial",
+      "joint",
+      "main"
+    ],
+    "turns": 30,
+    "max_calls": 80,
+    "backend_max_tokens": 4096
+  }
+}

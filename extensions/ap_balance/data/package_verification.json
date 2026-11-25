@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": {
+    "paper_compatible": {
+      "requests": 1050,
+      "method_records": 4200,
+      "balanced": true,
+      "paired": true,
+      "unique_effective_cases": true,
+      "metrics_recomputed": true,
+      "fixture_hashes_valid": true
+    },
+    "strict_partial": {
+      "requests": 972,
+      "method_records": 3888,
+      "balanced": true,
+      "paired": true,
+      "unique_effective_cases": true,
+      "metrics_recomputed": true,
+      "fixture_hashes_valid": true
+    }
+  },
+  "API_calls": 0
+}

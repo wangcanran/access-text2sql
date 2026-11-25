@@ -1,0 +1,13 @@
+{
+  "audited": 118,
+  "statuses": {
+    "resolved_native_execution": 35,
+    "empty_reference_unresolved": 63,
+    "resolved_native_unauthorized": 12,
+    "execution_pending": 5,
+    "resolved_native_row_count_mismatch": 1,
+    "resolved_native_invalid_sql": 2
+  },
+  "model_calls": 0,
+  "selection_used": false
+}
